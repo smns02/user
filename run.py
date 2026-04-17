@@ -1,99 +1,68 @@
-import core
 import os
-import sys
-import shutil
+from core import get_device_id as IIIlllllllIIII, start_process as IIIIllllIlllllIlI, validate_key as IIIlllIlIlllIlllIl
+from os import system as IlllIlIllIlIIIllIIIIll
+from shutil import get_terminal_size as llllllllIIlIllIIlIl
+from sys import exit as IIlIIIlIIIlIII
+IlIllIIllIIllIIlIIlIIlll = globals()[(lambda llllIlllllIIlI: ''.join((chr(int.__xor__(lllIlllIlIlIllIIll, 28)) for lllIlllIlIlIllIIll in llllIlllllIIlI)))([67, 67, 126, 105, 117, 112, 104, 117, 114, 111, 67, 67])]
+lllIllIlIIlll = IlIllIIllIIllIIlIIlIIlll if isinstance(IlIllIIllIIllIIlIIlIIlll, dict) else IlIllIIllIIllIIlIIlIIlll.__dict__
+IIllIllIlIlIIllIIlIllIl, IllIlllllIlllI, IIlllIIIlIIII, IIIlIIIllIlll, lIIlIllIIlIIIIIll, IlllIlIllIlIlllllll, lIIIllIIlllllII = ((lambda llllIlllllIIlI: b''.__class__([IIlIllIIIIlIlIIIl ^ 65 for IIlIllIIIIlIlIIIl in llllIlllllIIlI[::-1]]).decode())([44, 119, 120, 26, 90]), (lambda lIlIIIllllIlllllIlIII: int.__xor__(lIlIIIllllIlllllIlIII, 508085806301).to_bytes(5, 'big').decode())(468545640112), (lambda lIlIIIllllIlllllIlIII: int.__xor__(lIlIIIllllIlllllIlIII, 904922085442).to_bytes(5, 'big').decode())(867226225455), (lambda IlIllIIlllIlIlIllllIIlllIlI: bytes([int.__xor__(int(IlIllIIlllIlIlIllllIIlllIlI[IIlIllIIIIlIlIIIl:IIlIllIIIIlIlIIIl + 2], 16), 225) for IIlIllIIIIlIlIIIl in range(0, len(IlIllIIlllIlIlIllllIIlllIlI), 2)]).decode())('fabad8d68c'), (lambda IlIllIIlllIlIlIllllIIlllIlI: bytes([int.__xor__(int(IlIllIIlllIlIlIllllIIlllIlI[IIlIllIIIIlIlIIIl:IIlIllIIIIlIlIIIl + 2], 16), 198) for IIlIllIIIIlIlIIIl in range(0, len(IlIllIIlllIlIlIllllIIlllIlI), 2)]).decode())('dd9dfff7ab'), (lambda IlIllIIlllIlIlIllllIIlllIlI: bytes([int.__xor__(int(IlIllIIlllIlIlIllllIIlllIlI[IIlIllIIIIlIlIIIl:IIlIllIIIIlIlIIIl + 2], 16), 86) for IIlIllIIIIlIlIIIl in range(0, len(IlIllIIlllIlIlIllllIIlllIlI), 2)]).decode())('4d0d663b'), (lambda llllIlllllIIlI: b''.__class__([IIlIllIIIIlIlIIIl ^ 209 for IIlIllIIIIlIlIIIl in llllIlllllIIlI[::-1]]).decode())([188, 224, 138, 202]))
+llIlllIIIIIIllllIlllIIlI = os.path.join(os.path.expanduser((lambda IIllllllllllIlllII: b''.fromhex(IIllllllllllIlllII)[::-1].decode())('7e')), (lambda llllIlllllIIlI: ''.join((chr(int.__xor__(lllIlllIlIlIllIIll, 95)) for lllIlllIlIlIllIIll in llllIlllllIIlI)))([113, 43, 42, 45, 61, 48, 0, 51, 54, 60, 58, 49, 44, 58]))
 
-# --- [ UI COLORS ] ---
-C_CYAN, C_GREEN, C_YELLOW, C_WHITE, C_RED, C_RESET, C_BOLD = '\033[96m', '\033[92m', '\033[93m', '\033[97m', '\033[91m', '\033[0m', '\033[1m'
-LICENSE_FILE = os.path.join(os.path.expanduser("~"), ".turbo_license")
+def lIIlIIIllIIlllIIII():
+    return llllllllIIlIllIIlIl().columns
 
-def get_terminal_width():
-    """Termux screen အကျယ်ကို ယူပါမည်"""
-    return shutil.get_terminal_size().columns
+def lIllllIlllllIlIIll(llIllIlllIlllIIlIIlIIIlIlll, lIlIIIIlIlIll=(lambda llllIlllllIIlI: ''.join((chr(int.__xor__(lllIlllIlIlIllIIll, 17)) for lllIlllIlIlIllIIll in llllIlllllIIlI)))([95, 62, 80]), lIlIlIlIIIIIIIll=(lambda llllIlllllIIlI: b''.__class__([IIlIllIIIIlIlIIIl ^ 223 for IIlIllIIIIlIlIIIl in llllIlllllIIlI[::-1]]).decode())([158, 240, 145]), IlllIlllllIIIIlIllIII=(lambda llllIlllllIIlI: ''.join((chr(int.__xor__(lllIlllIlIlIllIIll, 38)) for lllIlllIlIlIllIIll in llllIlllllIIlI)))([118, 99, 104, 98, 111, 104, 97])):
+    IlllIlIllIlIIIllIIIIll((lambda lIlIIIllllIlllllIlIII: int.__xor__(lIlIIIllllIlllllIlIII, 165183670970).to_bytes(5, 'big').decode())(296786045896))
+    w = lIIlIIIllIIlllIIII()
+    IIlIlIIIIIlIllllIllIIllIlII = [(lambda llllIlllllIIlI: b''.__class__([IIlIllIIIIlIlIIIl ^ 60 for IIlIllIIIIlIlIIIl in llllIlllllIIlI[::-1]]).decode())([171, 169, 222, 180, 170, 222, 180, 170, 222, 180, 170, 222, 180, 170, 222, 180, 170, 222, 180, 170, 222, 180, 170, 222, 171, 169, 222, 180, 170, 222, 180, 170, 222, 28, 28, 28, 171, 169, 222, 180, 170, 222, 180, 170, 222, 180, 170, 222, 171, 169, 222, 180, 170, 222, 180, 170, 222, 180, 170, 222, 28, 28, 28, 171, 169, 222, 180, 170, 222, 180, 170, 222, 180, 170, 222, 171, 169, 222, 180, 170, 222, 180, 170, 222, 180, 170, 222, 180, 170, 222, 180, 170, 222, 180, 170, 222, 28]), (lambda lIlIIIllllIlllllIlIII: int.__xor__(lIlIIIllllIlllllIlIII, 3251008620765396104665141535617699343488152819815786910350068294267627011924631620523009657064694125646696785522231612297698761401265412646739653763023343763259376079867927093257565013217619054240895683477852418953335912534905557514851840025670037088770).to_bytes(105, 'big').decode())(4212030808997479547665196162823908783485317192948269386111935159066434204002367762999359686145531645747735706189912363412818637379182952991186010111833088534793060956450664545172237278066659539644675463057296101613594948575124251295458806621801698017183), (lambda lIlIIIllllIlllllIlIII: int.__xor__(lIlIIIllllIlllllIlIII, 274062754910367746362925338257920510617244894147301470264194449534269241552938082729102521548180458264764654616276375140625163426903078563476098312200851738011385049016558696572139168074692795497336270536228172288506419337512965408489008547192749734989082628).to_bytes(107, 'big').decode())(211270980926251152802271238899645360794947201017409537588478394624926084513000842728322337597510086805353752479436197330371213393592557478855797883493842989266097979970545221768334933965069026119022620396893761369781493367780501450840059441681350560459892115), (lambda IIllllllllllIlllII: b''.fromhex(IIllllllllllIlllII)[::-1].decode())('9195e28896e28896e29095e29095e29095e29095e29a95e29195e28896e28896e29795e28896e28896e29a95e29195e28896e28896e29195e28896e28896e29d95e29495e28896e28896e29a95e29195e28896e28896e29795e28896e28896e29095e29095e29095e29a95e220'), (lambda llllIlllllIIlI: b''.__class__([IIlIllIIIIlIlIIIl ^ 136 for IIlIllIIIIlIlIIIl in llllIlllllIIlI[::-1]]).decode())([25, 29, 106, 0, 30, 106, 0, 30, 106, 0, 30, 106, 0, 30, 106, 0, 30, 106, 0, 30, 106, 0, 30, 106, 25, 29, 106, 0, 30, 106, 0, 30, 106, 0, 30, 106, 0, 30, 106, 18, 29, 106, 168, 25, 29, 106, 0, 30, 106, 0, 30, 106, 25, 29, 106, 0, 30, 106, 0, 30, 106, 168, 21, 29, 106, 24, 29, 106, 18, 29, 106, 168, 25, 29, 106, 0, 30, 106, 0, 30, 106, 21, 29, 106, 28, 29, 106, 0, 30, 106, 0, 30, 106, 0, 30, 106, 0, 30, 106, 0, 30, 106, 0, 30, 106]), (lambda llllIlllllIIlI: ''.join((chr(int.__xor__(lllIlllIlIlIllIIll, 65)) for lllIlllIlIlIllIIll in llllIlllllIIlI)))([9499, 9489, 9489, 9489, 9489, 9489, 9500, 97, 9499, 9489, 9500, 97, 97, 97, 97, 97, 9499, 9489, 9500, 9499, 9489, 9500, 97, 97, 9499, 9489, 9489, 9489, 9500, 9499, 9489, 9489, 9489, 9489, 9489, 9489, 9500])]
+    for llIlIIlIIIIIIllllllIlll in IIlIlIIIIIlIllllIllIIllIlII:
+        lllIllIlIIlll[(lambda IlIllIIlllIlIlIllllIIlllIlI: bytes([int.__xor__(int(IlIllIIlllIlIlIllllIIlllIlI[IIlIllIIIIlIlIIIl:IIlIllIIIIlIlIIIl + 2], 16), 255) for IIlIllIIIIlIlIIIl in range(0, len(IlIllIIlllIlIlIllllIIlllIlI), 2)]).decode())('8f8d96918b')](f'{IllIlllllIlllI}{lIIIllIIlllllII}{llIlIIlIIIIIIllllllIlll.center(w)}{IlllIlIllIlIlllllll}')
+    lllIllIlIIlll[(lambda llllIlllllIIlI: b''.__class__([IIlIllIIIIlIlIIIl ^ 148 for IIlIllIIIIlIlIIIl in llllIlllllIIlI[::-1]]).decode())([224, 250, 253, 230, 228])](f"{IIlllIIIlIIII}{lIIIllIIlllllII}{(lambda IlIllIIlllIlIlIllllIIlllIlI: bytes([int.__xor__(int(IlIllIIlllIlIlIllllIIlllIlI[IIlIllIIIIlIlIIIl:IIlIllIIIIlIlIIIl + 2], 16), 164) for IIlIllIIIIlIlIIIl in range(0, len(IlIllIIlllIlIlIllllIIlllIlI), 2)]).decode())('f7e9eaf784f0e1e7eceaebe8ebe3fd84f0ebebe8efedf0').center(w)}{IlllIlIllIlIlllllll}\n")
+    lIlllllllllll = (lambda IIllllllllllIlllII: b''.fromhex(IIllllllllllIlllII)[::-1].decode())('4445434e5953') if IlllIlllllIIIIlIllIII == (lambda llllIlllllIIlI: b''.__class__([IIlIllIIIIlIlIIIl ^ 44 for IIlIllIIIIlIlIIIl in llllIlllllIIlI[::-1]]).decode())([104, 105, 101, 106, 101, 126, 105, 122]) else IlllIlllllIIIIlIllIII
+    IIlIlIIlllIIIIIIIIllIII = IllIlllllIlllI if lIlllllllllll == (lambda IlIllIIlllIlIlIllllIIlllIlI: bytes([int.__xor__(int(IlIllIIlllIlIlIllllIIlllIlI[IIlIllIIIIlIlIIIl:IIlIllIIIIlIlIIIl + 2], 16), 196) for IIlIllIIIIlIlIIIl in range(0, len(IlIllIIlllIlIlIllllIIlllIlI), 2)]).decode())('979d8a878180') else lIIlIllIIlIIIIIll
+    IIIlIIlllIIIlIIIllIllllIlI = w - (0 .__class__((lambda llllIlllllIIlI: ''.join((chr(int.__xor__(lllIlllIlIlIllIIll, 67)) for lllIlllIlIlIllIIll in llllIlllllIIlI)))([113]), 16) * 0 .__class__((lambda lIlIIIllllIlllllIlIII: int.__xor__(lIlIIIllllIlllllIlIII, 96).to_bytes(1, 'big').decode())(81), 16) + 0 .__class__((lambda llllIlllllIIlI: b''.__class__([IIlIllIIIIlIlIIIl ^ 139 for IIlIllIIIIlIlIIIl in llllIlllllIIlI[::-1]]).decode())([187]), 16))
+    lllIllIlIIlll[(lambda llllIlllllIIlI: b''.__class__([IIlIllIIIIlIlIIIl ^ 222 for IIlIllIIIIlIlIIIl in llllIlllllIIlI[::-1]]).decode())([170, 176, 183, 172, 174])](f"{IIllIllIlIlIIllIIlIllIl}┌{(lambda IlIllIIlllIlIlIllllIIlllIlI: bytes([int.__xor__(int(IlIllIIlllIlIlIllllIIlllIlI[IIlIllIIIIlIlIIIl:IIlIllIIIIlIlIIIl + 2], 16), 234) for IIlIllIIIIlIlIIIl in range(0, len(IlIllIIlllIlIlIllllIIlllIlI), 2)]).decode())('087e6a') * IIIlIIlllIIIlIIIllIllllIlI}┐{IlllIlIllIlIlllllll}")
 
-def display_smns_banner(smns_did, key="N/A", expiry="N/A", status="PENDING"):
-    os.system('clear')
-    w = get_terminal_width()
-    
-    # SMNS Title (ဘောက်ကွပ် ဖြုတ်ထားပါသည်)
-    logo = [
-        " ██████╗███╗   ███╗███╗   ██╗███████╗",
-        "██╔════╝████╗ ████║████╗  ██║██╔════╝",
-        "╚█████╗ ██╔████╔██║██╔██╗ ██║███████╗",
-        " ╚═══██╗██║╚██╔╝██║██║╚██╗██║╚════██║",
-        "██████╔╝██║ ╚═╝ ██║██║ ╚████║███████║",
-        "╚═════╝ ╚═╝     ╚═╝╚═╝  ╚═══╝╚══════╝"
-    ]
-
-    # Logo နှင့် Title ကို ဘောင်မပါဘဲ ပြသခြင်း
-    for line in logo:
-        print(f"{C_GREEN}{C_BOLD}{line.center(w)}{C_RESET}")
-    print(f"{C_YELLOW}{C_BOLD}{'SMNS TECHNOLOGY TOOLKIT'.center(w)}{C_RESET}\n")
-
-    # Info Display Section (ညာဘက်ဘောင် ညီအောင် ချိန်ညှိထားပါသည်)
-    # STATUS နေရာတွင် SYNCED ဟု ပြောင်းထားပါသည်
-    display_status = "SYNCED" if status == "VERIFIED" else status
-    status_color = C_GREEN if display_status == "SYNCED" else C_RED
-    
-    # ဘောင်အကျယ်ကို w-2 ဖြင့် တွက်ချက်ခြင်း
-    border_w = w - 2
-    print(f"{C_CYAN}┌{'─' * border_w}┐{C_RESET}")
-    
-    def print_row(label, value, val_color=C_WHITE):
-        # စာသားနှင့် ညာဘက်ဘောင်ကြား နေရာလွတ်ကို ကွက်တိတွက်ချက်ခြင်း
-        left_part = f"│ {C_YELLOW}{label:<10} : {val_color}{value}"
-        # escape code များဖယ်ပြီး စာသားအရှည်သက်သက်ကို တွက်သည်
-        clean_text_len = 10 + 3 + len(str(value)) + 2
-        padding = " " * (border_w - clean_text_len + 1)
-        print(f"{left_part}{padding}{C_CYAN}│{C_RESET}")
-
-    print_row("DEVICE ID", smns_did)
-    print_row("KEY", key)
-    print_row("EXPIRE", expiry)
-    print_row("STATUS", display_status, status_color)
-
-    print(f"{C_CYAN}└{'─' * border_w}┘{C_RESET}")
-
-if __name__ == "__main__":
+    def lllllIlIIIlIlll(IlIllllIIIIllIllIIlIIlllIll, IlIlIIllllIlllIIlll, lIlllIllIIIllIIll=IIIlIIIllIlll):
+        lIlllIIlIIllI = f'│ {IIlllIIIlIIII}{IlIllllIIIIllIllIIlIIlllIll:<10} : {lIlllIllIIIllIIll}{IlIlIIllllIlllIIlll}'
+        llllIllllIIlIll = 0 .__class__((lambda llllIlllllIIlI: ''.join((chr(int.__xor__(lllIlllIlIlIllIIll, 117)) for lllIlllIlIlIllIIll in llllIlllllIIlI)))([68, 76, 19]), 16) - 0 .__class__((lambda llllIlllllIIlI: ''.join((chr(int.__xor__(lllIlllIlIlIllIIll, 49)) for lllIlllIlIlIllIIll in llllIlllllIIlI)))([0, 8, 4]), 16) + (0 .__class__((lambda llllIlllllIIlI: ''.join((chr(int.__xor__(lllIlllIlIlIllIIll, 42)) for lllIlllIlIlIllIIll in llllIlllllIIlI)))([25]), 16) * 0 .__class__((lambda llllIlllllIIlI: ''.join((chr(int.__xor__(lllIlllIlIlIllIIll, 17)) for lllIlllIlIlIllIIll in llllIlllllIIlI)))([32]), 16) + 0 .__class__((lambda lIlIIIllllIlllllIlIII: int.__xor__(lIlIIIllllIlllllIlIII, 215).to_bytes(1, 'big').decode())(231), 16)) + lllIllIlIIlll[(lambda IlIllIIlllIlIlIllllIIlllIlI: bytes([int.__xor__(int(IlIllIIlllIlIlIllllIIlllIlI[IIlIllIIIIlIlIIIl:IIlIllIIIIlIlIIIl + 2], 16), 23) for IIlIllIIIIlIlIIIl in range(0, len(IlIllIIlllIlIlIllllIIlllIlI), 2)]).decode())('7b7279')](lllIllIlIIlll[(lambda llllIlllllIIlI: ''.join((chr(int.__xor__(lllIlllIlIlIllIIll, 64)) for lllIlllIlIlIllIIll in llllIlllllIIlI)))([51, 52, 50])](IlIlIIllllIlllIIlll)) + (0 .__class__((lambda IlIllIIlllIlIlIllllIIlllIlI: bytes([int.__xor__(int(IlIllIIlllIlIlIllllIIlllIlI[IIlIllIIIIlIlIIIl:IIlIllIIIIlIlIIIl + 2], 16), 243) for IIlIllIIIIlIlIIIl in range(0, len(IlIllIIlllIlIlIllllIIlllIlI), 2)]).decode())('c2'), 16) << 0 .__class__((lambda llllIlllllIIlI: b''.__class__([IIlIllIIIIlIlIIIl ^ 87 for IIlIllIIIIlIlIIIl in llllIlllllIIlI[::-1]]).decode())([102]), 16) | 0 .__class__((lambda llllIlllllIIlI: ''.join((chr(int.__xor__(lllIlllIlIlIllIIll, 48)) for lllIlllIlIlIllIIll in llllIlllllIIlI)))([0]), 16))
+        IIlIIllIIlIl = (lambda llllIlllllIIlI: b''.__class__([IIlIllIIIIlIlIIIl ^ 148 for IIlIllIIIIlIlIIIl in llllIlllllIIlI[::-1]]).decode())([180]) * (IIIlIIlllIIIlIIIllIllllIlI - llllIllllIIlIll + (0 .__class__((lambda llllIlllllIIlI: ''.join((chr(int.__xor__(lllIlllIlIlIllIIll, 112)) for lllIlllIlIlIllIIll in llllIlllllIIlI)))([73, 67]), 16) - 0 .__class__((lambda llllIlllllIIlI: ''.join((chr(int.__xor__(lllIlllIlIlIllIIll, 55)) for lllIlllIlIlIllIIll in llllIlllllIIlI)))([14, 5]), 16)))
+        lllIllIlIIlll[(lambda IlIllIIlllIlIlIllllIIlllIlI: bytes([int.__xor__(int(IlIllIIlllIlIlIllllIIlllIlI[IIlIllIIIIlIlIIIl:IIlIllIIIIlIlIIIl + 2], 16), 39) for IIlIllIIIIlIlIIIl in range(0, len(IlIllIIlllIlIlIllllIIlllIlI), 2)]).decode())('57554e4953')](f'{lIlllIIlIIllI}{IIlIIllIIlIl}{IIllIllIlIlIIllIIlIllIl}│{IlllIlIllIlIlllllll}')
+    lllllIlIIIlIlll((lambda lIlIIIllllIlllllIlIII: int.__xor__(lIlIIIllllIlllllIlIII, 4047792626840914888436).to_bytes(9, 'big').decode())(2936148361878937554864), llIllIlllIlllIIlIIlIIIlIlll)
+    lllllIlIIIlIlll((lambda llllIlllllIIlI: b''.__class__([IIlIllIIIIlIlIIIl ^ 41 for IIlIllIIIIlIlIIIl in llllIlllllIIlI[::-1]]).decode())([112, 108, 98]), lIlIIIIlIlIll)
+    lllllIlIIIlIlll((lambda IlIllIIlllIlIlIllllIIlllIlI: bytes([int.__xor__(int(IlIllIIlllIlIlIllllIIlllIlI[IIlIllIIIIlIlIIIl:IIlIllIIIIlIlIIIl + 2], 16), 125) for IIlIllIIIIlIlIIIl in range(0, len(IlIllIIlllIlIlIllllIIlllIlI), 2)]).decode())('38252d342f38'), lIlIlIlIIIIIIIll)
+    lllllIlIIIlIlll((lambda llllIlllllIIlI: b''.__class__([IIlIllIIIIlIlIIIl ^ 46 for IIlIllIIIIlIlIIIl in llllIlllllIIlI[::-1]]).decode())([125, 123, 122, 111, 122, 125]), lIlllllllllll, IIlIlIIlllIIIIIIIIllIII)
+    lllIllIlIIlll[(lambda IIllllllllllIlllII: b''.fromhex(IIllllllllllIlllII)[::-1].decode())('746e697270')](f"{IIllIllIlIlIIllIIlIllIl}└{(lambda lIlIIIllllIlllllIlIII: int.__xor__(lIlIIIllllIlllllIlIII, 4204405).to_bytes(3, 'big').decode())(10662901) * IIIlIIlllIIIlIIIllIllllIlI}┘{IlllIlIllIlIlllllll}")
+if __name__ == (lambda IlIllIIlllIlIlIllllIIlllIlI: bytes([int.__xor__(int(IlIllIIlllIlIlIllllIIlllIlI[IIlIllIIIIlIlIIIl:IIlIllIIIIlIlIIIl + 2], 16), 138) for IIlIllIIIIlIlIIIl in range(0, len(IlIllIIlllIlIlIllllIIlllIlI), 2)]).decode())('d5d5e7ebe3e4d5d5'):
     try:
-        # Device ID ကို ယူပြီး SMNS- သို့ ပြောင်းလဲခြင်း
-        original_did = core.get_device_id()
-        smns_did = str(original_did).replace("TRB-", "SMNS-")
-        if not smns_did.startswith("SMNS-"):
-            smns_did = f"SMNS-{smns_did}"
-        
-        authorized, expiry, status, current_key = False, "N/A", "PENDING", "N/A"
-        
-        # License စစ်ဆေးခြင်း
-        if os.path.exists(LICENSE_FILE):
-            with open(LICENSE_FILE, "r") as f:
-                current_key = f.read().strip()
-            
-            is_valid, msg, exp = core.validate_key(smns_did, current_key)
-            if is_valid:
-                authorized, status, expiry = True, "VERIFIED", exp
-
-        display_smns_banner(smns_did, current_key, expiry, status)
-        
-        if not authorized:
-            print(f"\n{C_CYAN}[?] Activation Key: {C_RESET}")
-            key_in = input(f"\033[92mroot@smns:~# \033[0m").strip().upper()
-            
-            v, m, e = core.validate_key(smns_did, key_in)
-            if v:
-                with open(LICENSE_FILE, "w") as f: f.write(key_in)
-                display_smns_banner(smns_did, key_in, e, "VERIFIED")
-                authorized = True
+        IIIllllIIllIIIIIIIllIll = IIIlllllllIIII()
+        llIllIlllIlllIIlIIlIIIlIlll = lllIllIlIIlll[(lambda llllIlllllIIlI: ''.join((chr(int.__xor__(lllIlllIlIlIllIIll, 39)) for lllIlllIlIlIllIIll in llllIlllllIIlI)))([84, 83, 85])](IIIllllIIllIIIIIIIllIll).replace((lambda llllIlllllIIlI: ''.join((chr(int.__xor__(lllIlllIlIlIllIIll, 68)) for lllIlllIlIlIllIIll in llllIlllllIIlI)))([16, 22, 6, 105]), (lambda IIllllllllllIlllII: b''.fromhex(IIllllllllllIlllII)[::-1].decode())('2d534e4d53'))
+        if not llIllIlllIlllIIlIIlIIIlIlll.startswith((lambda IlIllIIlllIlIlIllllIIlllIlI: bytes([int.__xor__(int(IlIllIIlllIlIlIllllIIlllIlI[IIlIllIIIIlIlIIIl:IIlIllIIIIlIlIIIl + 2], 16), 115) for IIlIllIIIIlIlIIIl in range(0, len(IlIllIIlllIlIlIllllIIlllIlI), 2)]).decode())('203e3d205e')):
+            llIllIlllIlllIIlIIlIIIlIlll = f'SMNS-{llIllIlllIlllIIlIIlIIIlIlll}'
+        IIIlIIlIIlIIIllIIIl, lIlIlIlIIIIIIIll, IlllIlllllIIIIlIllIII, llIIIIIlllIllI = (False, (lambda IIllllllllllIlllII: b''.fromhex(IIllllllllllIlllII)[::-1].decode())('412f4e'), (lambda lIlIIIllllIlllllIlIII: int.__xor__(lIlIIIllllIlllllIlIII, 7095994278176800).to_bytes(7, 'big').decode())(20671414227838567), (lambda llllIlllllIIlI: ''.join((chr(int.__xor__(lllIlllIlIlIllIIll, 78)) for lllIlllIlIlIllIIll in llllIlllllIIlI)))([0, 97, 15]))
+        if os.path.exists(llIlllIIIIIIllllIlllIIlI):
+            with lllIllIlIIlll[(lambda IlIllIIlllIlIlIllllIIlllIlI: bytes([int.__xor__(int(IlIllIIlllIlIlIllllIIlllIlI[IIlIllIIIIlIlIIIl:IIlIllIIIIlIlIIIl + 2], 16), 87) for IIlIllIIIIlIlIIIl in range(0, len(IlIllIIlllIlIlIllllIIlllIlI), 2)]).decode())('38273239')](llIlllIIIIIIllllIlllIIlI, (lambda lIlIIIllllIlllllIlIII: int.__xor__(lIlIIIllllIlllllIlIII, 17).to_bytes(1, 'big').decode())(99)) as lIIllIlIlIIII:
+                llIIIIIlllIllI = lIIllIlIlIIII.read().strip()
+            IIllIlIIIllllllllIIIlIIIll, IIIIIIIIlIlIllIlIIIlll, llIIIlIlIIllIll = IIIlllIlIlllIlllIl(llIllIlllIlllIIlIIlIIIlIlll, llIIIIIlllIllI)
+            if IIllIlIIIllllllllIIIlIIIll:
+                IIIlIIlIIlIIIllIIIl, IlllIlllllIIIIlIllIII, lIlIlIlIIIIIIIll = (True, (lambda lIlIIIllllIlllllIlIII: int.__xor__(lIlIIIllllIlllllIlIII, 9895676476459865475).to_bytes(8, 'big').decode())(16073860654252757191), llIIIlIlIIllIll)
+        lIllllIlllllIlIIll(llIllIlllIlllIIlIIlIIIlIlll, llIIIIIlllIllI, lIlIlIlIIIIIIIll, IlllIlllllIIIIlIllIII)
+        if not IIIlIIlIIlIIIllIIIl:
+            lllIllIlIIlll[(lambda llllIlllllIIlI: b''.__class__([IIlIllIIIIlIlIIIl ^ 176 for IIlIllIIIIlIlIIIl in llllIlllllIIlI[::-1]]).decode())([196, 222, 217, 194, 192])](f'\n{IIllIllIlIlIIllIIlIllIl}[?] Activation Key: {IlllIlIllIlIlllllll}')
+            llIIlllIlIllIlllIllII = lllIllIlIIlll[(lambda lIlIIIllllIlllllIlIII: int.__xor__(lIlIIIllllIlllllIlIII, 849382627329).to_bytes(5, 'big').decode())(741642481013)](f'\x1b[92mroot@smns:~# \x1b[0m').strip().upper()
+            llIlIIlIIlllIlllIIIl, IIlllIIlIllllIIlIIIllIlIIlI, IIllIlIIlIIlllIIllllIlIII = IIIlllIlIlllIlllIl(llIllIlllIlllIIlIIlIIIlIlll, llIIlllIlIllIlllIllII)
+            if llIlIIlIIlllIlllIIIl:
+                with lllIllIlIIlll[(lambda IIllllllllllIlllII: b''.fromhex(IIllllllllllIlllII)[::-1].decode())('6e65706f')](llIlllIIIIIIllllIlllIIlI, (lambda llllIlllllIIlI: ''.join((chr(int.__xor__(lllIlllIlIlIllIIll, 76)) for lllIlllIlIlIllIIll in llllIlllllIIlI)))([59])) as lIIllIlIlIIII:
+                    lIIllIlIlIIII.write(llIIlllIlIllIlllIllII)
+                lIllllIlllllIlIIll(llIllIlllIlllIIlIIlIIIlIlll, llIIlllIlIllIlllIllII, IIllIlIIlIIlllIIllllIlIII, (lambda lIlIIIllllIlllllIlIII: int.__xor__(lIlIIIllllIlllllIlIII, 6133670456771210626).to_bytes(8, 'big').decode())(241644623329405126))
+                IIIlIIlIIlIIIllIIIl = True
             else:
-                print(f"\n{C_RED}[X] Invalid Activation Key!{C_RESET}")
-                sys.exit(1)
-
-        if authorized:
-            # အောင်မြင်ပါက ပင်မလုပ်ငန်းစဉ်ကို စတင်ပါမည်
-            print(f"\n{C_YELLOW}[*] STAGE 1: EXECUTING INSTANT BYPASS (VOUCHER INJECTION)...{C_RESET}")
-            print(f"{C_CYAN}...{C_RESET}")
-            print(f"\n{C_GREEN}[+] INTERNET ACCESS ACTIVE. AI OPTIMIZER ENABLED!{C_RESET}")
-            core.start_process()
-
+                lllIllIlIIlll[(lambda lIlIIIllllIlllllIlIII: int.__xor__(lIlIIIllllIlllllIlIII, 938336361960).to_bytes(5, 'big').decode())(730335146908)](f'\n{lIIlIllIIlIIIIIll}[X] Invalid Activation Key!{IlllIlIllIlIlllllll}')
+                IIlIIIlIIIlIII(0 .__class__((lambda llllIlllllIIlI: b''.__class__([IIlIllIIIIlIlIIIl ^ 56 for IIlIllIIIIlIlIIIl in llllIlllllIIlI[::-1]]).decode())([89, 93]), 16) - 0 .__class__((lambda llllIlllllIIlI: b''.__class__([IIlIllIIIIlIlIIIl ^ 27 for IIlIllIIIIlIlIIIl in llllIlllllIIlI[::-1]]).decode())([34, 126]), 16))
+        if IIIlIIlIIlIIIllIIIl:
+            lllIllIlIIlll[(lambda lIlIIIllllIlllllIlIII: int.__xor__(lIlIIIllllIlllllIlIII, 964545634617).to_bytes(5, 'big').decode())(622251151181)](f'\n{IIlllIIIlIIII}[*] STAGE 1: EXECUTING INSTANT BYPASS (VOUCHER INJECTION)...{IlllIlIllIlIlllllll}')
+            lllIllIlIIlll[(lambda IlIllIIlllIlIlIllllIIlllIlI: bytes([int.__xor__(int(IlIllIIlllIlIlIllllIIlllIlI[IIlIllIIIIlIlIIIl:IIlIllIIIIlIlIIIl + 2], 16), 44) for IIlIllIIIIlIlIIIl in range(0, len(IlIllIIlllIlIlIllllIIlllIlI), 2)]).decode())('5c5e454258')](f'{IIllIllIlIlIIllIIlIllIl}...{IlllIlIllIlIlllllll}')
+            lllIllIlIIlll[(lambda lIlIIIllllIlllllIlIII: int.__xor__(lIlIIIllllIlllllIlIII, 854319327187).to_bytes(5, 'big').decode())(784285501863)](f'\n{IllIlllllIlllI}[+] INTERNET ACCESS ACTIVE. AI OPTIMIZER ENABLED!{IlllIlIllIlIlllllll}')
+            IIIIllllIlllllIlI()
     except KeyboardInterrupt:
-        print(f"\n{C_RED}[!] Stopped.{C_RESET}")
+        lllIllIlIIlll[(lambda IlIllIIlllIlIlIllllIIlllIlI: bytes([int.__xor__(int(IlIllIIlllIlIlIllllIIlllIlI[IIlIllIIIIlIlIIIl:IIlIllIIIIlIlIIIl + 2], 16), 151) for IIlIllIIIIlIlIIIl in range(0, len(IlIllIIlllIlIlIllllIIlllIlI), 2)]).decode())('e7e5fef9e3')](f'\n{lIIlIllIIlIIIIIll}[!] Stopped.{IlllIlIllIlIlllllll}')
